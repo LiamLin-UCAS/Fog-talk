@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class JDBCUtils
 {
-    private static final String connectionURL = "jdbc:mysql://localhost:3306/management_system?"
+    private static final String connectionURL = "jdbc:mysql://localhost:3306/postbar?"
             + "useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC";
     private static final String username = "胖聪一号";
     private static final String password = "lyc2959747634@@@";
