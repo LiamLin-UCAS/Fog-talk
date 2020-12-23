@@ -4,11 +4,11 @@ public class User
 {
     private String username; //用户名
     private String password; //密码
-    private String userid; //账号
+    private String account; //账号
     private String phone; //手机号
     private String mailbox; //邮箱
     private String sex; //性别
-    private String age; //年龄
+    private int age; //年龄
     private String birthday; //出生日期
     private String signature; //个性签名
     private String school; //学校
@@ -31,12 +31,12 @@ public class User
         this.password = password;
     }
 
-    public String getUserid() {
-        return userid;
+    public String getAccount() {
+        return account;
     }
 
-    public void setUserid(String userid) {
-        this.userid = userid;
+    public void setAccount(String account) {
+        this.account = account;
     }
 
     public String getPhone() {
@@ -63,11 +63,11 @@ public class User
         this.sex = sex;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 

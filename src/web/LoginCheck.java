@@ -14,7 +14,7 @@ public class LoginCheck extends HttpServlet
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             //throws ServletException, IOException
     {
-        String userId = req.getParameter("userId");
+        String account = req.getParameter("account");
         String password = req.getParameter("password");
     }
 }
