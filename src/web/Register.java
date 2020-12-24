@@ -23,25 +23,38 @@ public class Register extends HttpServlet
         /*
         第一步:获取注册信息
          */
+
+        //解决姓名乱码问题
         String username = new String(
                 req.getParameter("username").getBytes("iso-8859-1"),"UTF-8"
-        );//解决姓名乱码问题
+        );
+
         String account = req.getParameter("account");
+
         String phone = req.getParameter("phone");
+
         String mailbox = req.getParameter("mailbox");
+
+        //解决性别乱码问题
         String sex = new String(
                 req.getParameter("sex").getBytes("iso-8859-1"),"UTF-8"
-        );//解决性别乱码问题
+        );
+
         int age = Integer.parseInt(req.getParameter("age"));
+
+        //解决个性签名乱码问题
         String signature = new String(
                 req.getParameter("signature").getBytes("iso-8859-1"),"UTF-8"
-        );//解决个性签名乱码问题
+        );
+
         String password = req.getParameter("password");
 
         /*
         第二步:创建user用户，传给注册用户的函数，完成注册
          */
+
         User user = new User();
+
         user.setUsername(username);
         user.setAccount(account);
         user.setPhone(phone);
@@ -54,11 +67,13 @@ public class Register extends HttpServlet
         /*
         第三步:注册新用户信息，并返回结果状态
          */
+
         boolean judge = registerNewUser(user);
 
         /*
         返回给客户端响应
          */
+
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("judge",judge);
 

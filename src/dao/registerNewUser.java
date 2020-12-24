@@ -31,7 +31,6 @@ public class registerNewUser
             String sql1 = "select * from user where account = ? or username = ? or phone = ? or mailbox = ?";
             stmt = con.prepareStatement(sql1);
 
-            //把信息加入？中
             stmt.setString(1,account);
             stmt.setString(2,username);
             stmt.setString(3,phone);
