@@ -65,6 +65,7 @@ public class registerNewUser
         {
             JDBCUtils.close(rs, stmt, con);
         }
+
         return false;
     }
 }
