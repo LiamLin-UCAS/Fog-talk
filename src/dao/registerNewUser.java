@@ -28,13 +28,16 @@ public class registerNewUser
             String signature = user.getSignature();
             String password = user.getPassword();
 
-            String sql1 = "select * from user where account = ? or username = ?";
+            String sql1 = "select * from user where account = ? or username = ? or phone = ? or mailbox = ?";
             stmt = con.prepareStatement(sql1);
 
             stmt.setString(1,account);
             stmt.setString(2,username);
+            stmt.setString(3,phone);
+            stmt.setString(4,mailbox);
 
             rs = stmt.executeQuery();
+            //判断信息是否有重复
             if(rs.next()) return false;
 
             String sql2 = "insert into user(account,username,password,mailbox,phone,age," +
