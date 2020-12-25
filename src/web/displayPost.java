@@ -1,7 +1,7 @@
 package web;
 
 import com.alibaba.fastjson.JSONObject;
-import model.User;
+import model.Post;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,44 +11,23 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import static dao.loginCheckUser.loginCheckUser;
+import static dao.displayAllPost.displayAllPost;
 
-@WebServlet ("/login")
-public class LoginCheck extends HttpServlet
+@WebServlet("/displayPost")
+public class displayPost extends HttpServlet
 {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException
     {
-        /*
-        第一步:获取登录信息
-         */
+        Post[] posts = displayAllPost();
 
-        String account = req.getParameter("account");
-
-        String password = req.getParameter("password");
-
-        /*
-        第二步:创建用户对象将信息放入
-         */
-
-        User user = new User();
-
-        user.setAccount(account);
-        user.setPassword(password);
-
-        /*
-        第三步:进行身份验证
-         */
-
-        boolean judge = loginCheckUser(user);
-
-        /*
-        第四步:把结果发还给前端
-         */
+        int postsLength = 0;
+        while (posts[postsLength] != null) postsLength++;
 
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("judge",judge);
+        jsonObject.put("posts",posts);
+        jsonObject.put("postsLength",postsLength);
 
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("application/json");
