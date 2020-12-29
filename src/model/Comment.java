@@ -5,6 +5,7 @@ public class Comment
     private String content; //评论内容
     private String releaseTime; //发布时间
     private String publisher; //发布人
+    private String postId; //评论对应的帖子id
 
     public String getContent() {
         return content;
@@ -28,5 +29,13 @@ public class Comment
 
     public void setPublisher(String publisher) {
         this.publisher = publisher;
+    }
+
+    public String getPostId() {
+        return postId;
+    }
+
+    public void setPostId(String postId) {
+        this.postId = postId;
     }
 }
