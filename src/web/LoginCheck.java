@@ -24,6 +24,7 @@ public class LoginCheck extends HttpServlet
         第一步:获取登录信息
          */
 
+        //测试数据
         String account = req.getParameter("account");
 
         String password = req.getParameter("password");
