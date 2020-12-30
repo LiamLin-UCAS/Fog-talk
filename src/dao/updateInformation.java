@@ -19,7 +19,7 @@ public class updateInformation
         {
             con = JDBCUtils.getConnection();
 
-            String sql = "update from user set username = ?,phone = ?,mailbox = ?,sex = ?,age = ?,signature = ? where account = ?";
+            String sql = "update user set username = ?,phone = ?,mailbox = ?,sex = ?,age = ?,signature = ? where account = ?";
             stmt = con.prepareStatement(sql);
 
             stmt.setString(1,user.getUsername());
