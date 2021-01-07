@@ -38,6 +38,7 @@ public class displayAllPost
                 post.setContent(rs.getString(2));
                 post.setPublisher(rs.getString(3));
                 post.setReleaseTime(rs.getString(4));
+                post.setName(rs.getString(5));
 
                 Comment[] comments = showComment(post.getPostId());
 

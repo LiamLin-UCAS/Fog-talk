@@ -37,6 +37,7 @@ public class showComment
                 comment.setReleaseTime(rs.getString(4));
 
                 comments[number] = comment;
+                number++;
             }
 
             return comments;

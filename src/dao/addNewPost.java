@@ -19,13 +19,14 @@ public class addNewPost
         {
             con = JDBCUtils.getConnection();
 
-            String sql = "insert into post(content,publisher,releaseTime)" +
-                    "values(?,?,?)";
+            String sql = "insert into post(content,publisher,releaseTime,name)" +
+                    "values(?,?,?,?)";
             stmt = con.prepareStatement(sql);
 
             stmt.setString(1,post.getContent());
             stmt.setString(2,post.getPublisher());
             stmt.setString(3,post.getReleaseTime());
+            stmt.setString(4,post.getName());
 
             int number = stmt.executeUpdate();
             if(number != 0) return true;

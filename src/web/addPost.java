@@ -37,6 +37,10 @@ public class addPost extends HttpServlet
                 req.getParameter("releaseTime").getBytes("iso-8859-1"),"UTF-8"
         );
 
+        String name = new String(
+                req.getParameter("name").getBytes("iso-8859-1"),"UTF-8"
+        );
+
         /*
         第二步:构建帖子post对象
          */
@@ -46,6 +50,7 @@ public class addPost extends HttpServlet
         post.setContent(content);
         post.setPublisher(publisher);
         post.setReleaseTime(releaseTime);
+        post.setName(name);
 
         /*
         第三步:把新的帖子添加到数据库，并返回结果状态

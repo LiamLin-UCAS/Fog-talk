@@ -7,6 +7,7 @@ public class Post
     private String content; //帖子内容
     private String publisher; //发布人
     private String releaseTime; //发布时间
+    private String name; //帖子名字
     private String commentsNumber; //评论数目
     private Comment[] comments; //评论数组
     private int commentsLength;
@@ -41,6 +42,14 @@ public class Post
 
     public void setReleaseTime(String releaseTime) {
         this.releaseTime = releaseTime;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCommentsNumber() {
